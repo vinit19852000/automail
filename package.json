@@ -4,7 +4,8 @@
   "description": "\"# automail\"",
   "main": "serverupcheck.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node serverupcheck.js",       // Specify the start script
+    "build": "npm install"                  // Ensure npm install is run
   },
   "keywords": [],
   "author": "",
