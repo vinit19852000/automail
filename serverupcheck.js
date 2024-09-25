@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 // Configuration for ping and email
 const url = 'https://demo-uaxw.onrender.com/swagger-ui/index.html';
 
-const url2 = 'https://demo-uaxw.onrender.com/swagger-ui/index.html';
+const url2 = 'https://stock-r362.onrender.com/index.html';
 const checkInterval = 8* 60 * 1000; // 5 minutes in milliseconds
 
 // Gmail configuration (replace with your own credentials)
@@ -41,14 +41,14 @@ function checkWebsite() {
     console.log(`Status Code: ${statusCode}`);
 
     if (statusCode !== 200) {
-      console.log('Server is down, sending email...');
-      sendEmailNotification();
+      console.log('DEmo is down, sending email...');
+      sendEmailNotification('Demo');
     } else {
-      console.log('Server is up and running fine.');
+      console.log('Demo is up and running fine.');
     }
   }).on('error', (e) => {
-    console.log('Error checking the server:', e.message);
-    sendEmailNotification();
+    console.log('Error checking the Demo server:', e.message);
+    sendEmailNotification('Demo');
   });
 }
 
@@ -58,19 +58,22 @@ function checkWebsite2() {
     console.log(`Status Code: ${statusCode}`);
 
     if (statusCode !== 200) {
-      console.log('Server is down, sending email...');
-      sendEmailNotification();
+      console.log('Stock is down, sending email...');
+      sendEmailNotification('Stock app');
     } else {
-      console.log('Server is up and running fine.');
+      console.log('Stock is up and running fine.');
     }
   }).on('error', (e) => {
-    console.log('Error checking the server:', e.message);
-    sendEmailNotification();
+    console.log('Error checking the Stock server:', e.message);
+    sendEmailNotification('Stock');
   });
 }
 
 // Check the website every 5 minutes
 setInterval(checkWebsite, checkInterval);
 
+setInterval(checkWebsite2, checkInterval);
+
 // Run the first check immediately
 checkWebsite();
+checkWebsite2();

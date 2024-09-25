@@ -4,8 +4,8 @@
   "description": "\"# automail\"",
   "main": "serverupcheck.js",
   "scripts": {
-    "start": "node serverupcheck.js",       // Specify the start script
-    "build": "npm install"                  // Ensure npm install is run
+    "start": "node serverupcheck.js",      
+    "build": "npm install"                  
   },
   "keywords": [],
   "author": "",
