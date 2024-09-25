@@ -69,10 +69,6 @@ function checkWebsite2() {
   });
 }
 
-// Check the website every 5 minutes
-setInterval(checkWebsite, checkInterval);
-
-setInterval(checkWebsite2, checkInterval);
 
 // Run the first check immediately
 checkWebsite();
