@@ -1,18 +1,17 @@
 name: Website Monitoring
 
-# Trigger the workflow every 5 minutes using cron syntax
 on:
   schedule:
-    - cron: '*/5 * * * *'  # This means every 5 minutes
+    - cron: '*/5 * * * *'  
 
 jobs:
   check-websites:
-    runs-on: ubuntu-latest  # GitHub provides an Ubuntu VM
+    runs-on: ubuntu-latest  
     steps:
-      - uses: actions/checkout@v2  # Check out your repository
+      - uses: actions/checkout@v2  
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # You can specify any Node.js version
-      - run: npm install  # Install the necessary Node.js dependencies
-      - run: node serverupcheck.js  # Run your monitoring script
+          node-version: '16'  
+      - run: npm install  
+      - run: node serverupcheck.js  
