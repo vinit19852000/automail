@@ -1,4 +1,8 @@
-name: Website Monitoring
+
+
+name: Website check 5 minutes
+
+
 
 on:
   schedule:
@@ -15,3 +19,13 @@ jobs:
           node-version: '16'  
       - run: npm install  
       - run: node serverupcheck.js  
+
+
+
+
+
+
+
+
+
+
