@@ -5,7 +5,6 @@ const nodemailer = require('nodemailer');
 const url = 'https://demo-uaxw.onrender.com/swagger-ui/index.html';
 
 const url2 = 'https://stock-r362.onrender.com/index.html';
-const checkInterval = 8* 60 * 1000; // 5 minutes in milliseconds
 
 // Gmail configuration (replace with your own credentials)
 const transporter = nodemailer.createTransport({
@@ -70,6 +69,5 @@ function checkWebsite2() {
 }
 
 
-// Run the first check immediately
 checkWebsite();
 checkWebsite2();
