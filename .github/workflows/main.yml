@@ -1,16 +1,13 @@
-
-
-name: Website minutes
-
-
+name: Website check
 
 on:
+  push:    # This triggers the workflow on push to the repository
   schedule:
-    - cron: '*/5 * * * *'  
+    - cron: '*/5 * * * *'  # This runs every 5 minutes
 
 jobs:
   check-websites:
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2  
       - name: Set up Node.js
@@ -18,14 +15,4 @@ jobs:
         with:
           node-version: '16'  
       - run: npm install  
-      - run: node serverupcheck.js  
-
-
-
-
-
-
-
-
-
-
+      - run: node serverupcheck.js
